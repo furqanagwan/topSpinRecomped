@@ -11,7 +11,7 @@ files or extracted assets. You must own the game.
 | Game | Supported disc | Status | Download |
 | --- | --- | --- | --- |
 | [Top Spin 3](topspin3/README.md) | 🇺🇸 🇪🇺 USA, Europe (`545407FF`) | Boots to the front end | [Releases](https://github.com/furqanagwan/topSpinRecomped/releases?q=topspin3) |
-| Top Spin 4 | 🇺🇸 🇪🇺 USA, Europe | Not started | |
+| [Top Spin 4](topspin4/README.md) | 🇺🇸 🇪🇺 USA, Europe (`54540859`) | Plays the intro video, crashes before the front end | |
 
 ## Playing
 
@@ -55,7 +55,7 @@ where. An empty `portable.txt` next to the executable keeps them beside it.
 | Processor | 64-bit x86 CPU with SSE4.1 |
 | Graphics | DirectX 12 GPU (feature level 11_0) |
 | Memory | 8 GB RAM recommended |
-| Storage | Top Spin 3: 4.5 GB, plus room for the ISO while it is copied |
+| Storage | Top Spin 3: 4.5 GB, Top Spin 4: 6 GB, plus room for the ISO while it is copied |
 | Software | [Microsoft Visual C++ Redistributable 2015-2022 (x64)](https://aka.ms/vs/17/release/vc_redist.x64.exe) |
 | Game | Your own Xbox 360 disc image of a supported region |
 
@@ -80,6 +80,7 @@ rexglue extract "<your disc>.iso" topspin3\assets
 ```
 framework/                  recomp-framework submodule (with thirdparty/rexglue-sdk)
 topspin3/                   Top Spin 3: descriptor, codegen config, settings, GDK/UWP metadata
+topspin4/                   Top Spin 4: the same, plus per-module configs for its two DLLs
 <GAME>/docs/NOTES.md        Research notes: codegen, crashes and fixes
 <GAME>/release.json         Supported disc and system requirements for release packaging
 ```
