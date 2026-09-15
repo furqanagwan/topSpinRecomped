@@ -17,10 +17,16 @@ includes = [
 guest_path = "Loader_DLL.xex"
 file_path = "assets/Loader_DLL.xex"
 out_directory_path = "generated/Loader_DLL"
-includes = ["config/Loader_DLL/functions.toml"]
+includes = [
+    "config/Loader_DLL/functions.toml",
+    "config/Loader_DLL/setjmp.toml",
+]
 
 [[modules]]
 guest_path = "Swing_DLL.xex"
 file_path = "assets/Swing_DLL.xex"
 out_directory_path = "generated/Swing_DLL"
-includes = ["config/Swing_DLL/functions.toml"]
+includes = [
+    "config/Swing_DLL/functions.toml",
+    "config/Swing_DLL/setjmp.toml",
+]
