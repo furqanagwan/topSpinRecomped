@@ -33,3 +33,16 @@ warnings in a 3,177-line debug log are the missing `gamecontrollerdb.txt`, the
 harmless `ShaderDumpxe:` probe and `d:\ActivateDebugMode.txt`, a debug-mode
 switch file the game looks for. Not yet tested: controller input, a match,
 career.
+
+### 2026-09-15: repeating intro audio
+Repeating audio was heard during the intro video on the first launch, which ran
+with `--log_level=debug`. To find out whether the game or the host repeated it,
+the function that calls `XAudioSubmitRenderDriverFrame` (sub_82173038) was
+wrapped to hash and record every submitted frame for 74 seconds: no frame
+repeated one from the previous 1.4 seconds, no passage of half a second or more
+repeated at any lag up to 12 seconds, and steady-state submission was 187.75
+frames a second against the 187.5 the output consumes. Later runs at the
+default log level played the intro correctly. Debug logging on the audio and
+kernel paths is the likely cause: it slows the threads that feed the mixer.
+If it comes back, the samples pointer sits in the stack slot at 88(r1) of
+sub_82173038.
