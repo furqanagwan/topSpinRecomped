@@ -5,7 +5,9 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include(generated/rexglue.cmake)
-include(../framework/cmake/Recomp.cmake)
+set(RECOMP_FRAMEWORK_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../framework" CACHE PATH
+    "Framework checkout to use for this build")
+include("${RECOMP_FRAMEWORK_DIR}/cmake/Recomp.cmake")
 
 recomp_add_game(top_spin_4
     OUTPUT_NAME "Top Spin 4"
